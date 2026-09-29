@@ -1,6 +1,6 @@
 # RoadRate — React + TypeScript Toll Estimator
 
-![CI](https://github.com/ToTheLoveOfMyLife/Toll-Calculator/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/timwmcqueen/Toll-Calculator/actions/workflows/ci.yml/badge.svg)
 
 A modern web application built by evolving an early Java console exercise into a typed, tested, accessible React project.
 
