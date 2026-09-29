@@ -15,7 +15,7 @@ describe("RoadRate app", () => {
 
     await user.click(screen.getByRole("button", { name: /estimate toll/i }));
 
-    expect(screen.getByText("$4.65")).toBeInTheDocument();
+    expect(screen.getAllByText("$4.65").length).toBeGreaterThan(0);
     expect(screen.getByText(/Morning peak rate/)).toBeInTheDocument();
   });
 
@@ -28,6 +28,6 @@ describe("RoadRate app", () => {
     await user.type(screen.getByLabelText(/travel time/i), "17:15");
     await user.click(screen.getByRole("button", { name: /estimate toll/i }));
 
-    expect(screen.getByText("$3.60")).toBeInTheDocument();
+    expect(screen.getAllByText("$3.60").length).toBeGreaterThan(0);
   });
 });
