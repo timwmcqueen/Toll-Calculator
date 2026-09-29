@@ -2,7 +2,7 @@
 
 ![CI](https://github.com/timwmcqueen/Toll-Calculator/actions/workflows/ci.yml/badge.svg)
 
-A modern web application built by evolving an early Java console exercise into a typed, tested, accessible React project.
+RoadRate is a small React and TypeScript toll calculator. I rebuilt an old Java exercise as a browser app so I could focus on frontend structure, accessibility, state, and testing.
 
 The original Java implementation is preserved under `legacy/Main.java`; the current application lives under `src/`.
 
