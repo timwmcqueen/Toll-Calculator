@@ -2,13 +2,9 @@
 
 ![CI](https://github.com/timwmcqueen/Toll-Calculator/actions/workflows/ci.yml/badge.svg)
 
-RoadRate is a small React and TypeScript toll calculator. I rebuilt an old Java exercise as a browser app so I could focus on frontend structure, accessibility, state, and testing.
+RoadRate is a React and TypeScript app for calculating toll rates based on the day and time of travel.
 
-The original Java implementation is preserved under `legacy/Main.java`; the current application lives under `src/`.
-
-## Why this project exists
-
-This project demonstrates how I approach modernization: isolate the business rules, give them strong tests, build an accessible interface around them, and automate verification in CI.
+The original Java version is kept in `legacy/Main.java`.
 
 ## Stack
 
@@ -17,21 +13,20 @@ This project demonstrates how I approach modernization: isolate the business rul
 - Vite
 - Vitest
 - React Testing Library
-- Browser localStorage for recent estimates
+- Browser localStorage
 - GitHub Actions
 - Docker / nginx
 
 ## Features
 
 - Weekday and weekend/holiday rate schedules
-- Native time input with domain-level validation
-- Typed rate calculation logic separated from presentation
-- Accessible form labels and live result feedback
-- Recent estimate history persisted in the browser
+- Native time input
+- Toll calculation logic kept separate from React components
+- Accessible labels and live result feedback
+- Recent estimate history saved in the browser
 - Responsive layout
-- Unit tests for pricing rules
-- Component tests for key user flows
-- Automated build and test checks on pull requests
+- Unit tests for rate calculations
+- Component tests for the main user flows
 
 ## Run locally
 
@@ -62,9 +57,9 @@ docker build -t road-rate .
 docker run -p 8080:80 road-rate
 ```
 
-Then open `http://localhost:8080`.
+Open `http://localhost:8080`.
 
-## Architecture
+## Project structure
 
 ```
 src/
@@ -80,21 +75,4 @@ src/
 └── styles.css
 ```
 
-The core toll rules are intentionally kept in `src/lib/toll.ts`, independent of React. That keeps the business logic deterministic, reusable, and easy to test.
-
-## Engineering practices demonstrated
-
-- React component composition
-- TypeScript domain modeling
-- Separation of business logic from UI
-- Accessible form design
-- Unit and component testing
-- Defensive state persistence
-- Responsive CSS
-- CI on pushes and pull requests
-- Containerized static deployment
-- Git branch / pull-request workflow
-
-## Project history
-
-This repository began as a small Java exercise. The original source remains in `legacy/` so the repository documents the progression from an introductory program to a maintainable modern frontend application.
+The toll rules live in `src/lib/toll.ts`, separate from the React components, so they can be tested without rendering the UI.
